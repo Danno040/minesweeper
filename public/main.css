@@ -1,0 +1,50 @@
+#content {
+  max-width: 1050px;
+  margin: 0 auto;
+  background-color: rgb(193, 193, 193);
+  padding: 12px;
+}
+
+header {
+  border: inset 5px;
+  padding: 10px;
+  margin: 0 0 12px 0;
+  text-align: center;
+}
+
+.digit-counter {
+  border: inset 1px;
+  background-color: #000000;
+  color: #FF0000;
+  padding: 2px 5px;
+}
+
+.bomb-count {
+  float: left;
+}
+
+.timer {
+  float: right;
+}
+
+#board {
+  border: inset 5px;
+  display: table;
+  margin: 0 auto;
+}
+
+.row {
+  height: 32px;
+}
+
+.tile {
+  display: inline-block;
+  height: 100%;
+  width: 32px;
+}
+
+.tile img {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
