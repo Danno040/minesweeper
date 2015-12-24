@@ -52,7 +52,7 @@ export default class Minesweeper {
       }
 
       if (this.internalBoard.isMine(x,y)) {
-        this.visibleBoard = this.internalBoard.state;
+        this.revealBoard();
 
         // Show the killer mine
         this.visibleBoard[x][y] = EXPLODED_MINE_TILE;
@@ -70,7 +70,7 @@ export default class Minesweeper {
       this.clearTileCount--;
 
       if (this.clearTileCount == 0) {
-        this.visibleBoard = this.internalBoard.state;
+        this.revealBoard();
 
         this.gameOverCallback({
           victory: true,
@@ -103,6 +103,15 @@ export default class Minesweeper {
 
       tilesToCheck.map((position) => {
         this.click(position[0], position[1]);
+      });
+    }
+
+    // Reveals the entire board
+    revealBoard() {
+      this.internalBoard.state.map((row, i) => {
+        row.map((tile, j) => {
+          this.visibleBoard[i][j] = tile;
+        });
       });
     }
 }

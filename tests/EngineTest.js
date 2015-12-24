@@ -1,6 +1,6 @@
 import Minesweeper from '../src/Minesweeper';
 import testBoard from './fixures/testBoard';
-import { BLANK_TILE as B } from '../src/constants/tiles.js';
+import { BLANK_TILE as B, MINED_TILE as M } from '../src/constants/tiles.js';
 import expects from 'unexpected';
 import sinon from 'sinon';
 
@@ -84,15 +84,14 @@ describe('Minesweeper Engine', () => {
         expects(gameOverSpy.calledOnce, 'to be true');
         let result = gameOverSpy.args[0][0];
         expects(result.victory, 'to be', false);
-        expects(result.killerTile, 'to equal', [1, 0]);
         expects(result.elapsedTime, 'not to be undefined');
       });
 
       it('calls "game over" callback when all of the board is revealed (except for the mines)', () => {
         const totallyRevealedBoard = [
-          [3, B, 3, 1, 0],
-          [B, B, B, 2, 1],
-          [2, 3, 3, B, 1],
+          [3, M, 3, 1, 0],
+          [M, M, M, 2, 1],
+          [2, 3, 3, M, 1],
           [0, 0, 1, 1, 1],
           [0, 0, 0, 0, 0]
         ];
