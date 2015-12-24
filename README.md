@@ -1,4 +1,4 @@
-Minesweeper
+Minesweeper [![Build Status](https://travis-ci.org/Danno040/minesweeper.svg?branch=master)](https://travis-ci.org/Danno040/minesweeper)
 ===
 
 The game of Minesweeper built in JavaScript.
